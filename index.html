@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ukrainian Trends</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Marmelad:wght@400;600&family=Marck+Script&display=swap" rel="stylesheet" />
+  <style>
+    
+     /* Загальні стилі */
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Marcellus SC', sans-serif;
+      height: 100%;
+    }
+
+    /* Навігаційне меню */
+    header {
+      background:#1E1E1E;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      font-weight:bold;
+    }
+
+    .logo {
+      font-weight:bold;
+      font-size: 20px;
+      letter-spacing: 1.5px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 20px;
+    }
+
+    /* Герой секція */
+    .hero {
+      background: url("images/header.jpg") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      padding-top: 80px; /* відступ щоб меню не перекривало */
+    }
+
+    .hero-text {
+      font-size:200px;
+      font-weight:normal;
+    }
+
+    .hero-btn {
+      margin-top:133px;
+      padding: 0.75rem 2rem;
+      border: 1px solid white;
+      background: transparent;
+      color: white;
+      font-size: 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero-btn:hover {
+      background: white;
+      color: black;
+    }
+    .container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left, .right {
+  flex: 1 1 45%;
+}
+
+.left {
+  padding-right: 40px;
+}
+
+.title {
+  font-family:'Marck Script', cursive;
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 95px;
+}
+
+.text {
+  font-family: 'Marmelad', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 166px;
+}
+
+.text p {
+  margin-bottom: 15px;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 92px;
+}
+
+.contact-block {
+  flex: 1 1 250px; /* кожна колонка займає мінімум 250px */
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 10px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-block img {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .left, .right {
+    flex: 1 1 100%;
+    padding-right: 0;
+  }
+}
+
+.outfit-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.outfit-item {
+  text-align: center;
+  flex: 1 1 200px;
+}
+
+.outfit-item img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.style-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background-color: #1E1E1E;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.style-btn:hover {
+  background-color: #444;
+}
+
+.outfit-gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+  gap: 40px;
+  text-align: center;
+}
+
+.outfit-item img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.outfit-item button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  background: #1E1E1E;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.outfit-item button:hover {
+  background: #333;
+}
+
+  body {
+    font-family: 'Marmelad', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  html,body {
+    height:100%;
+    margin:0;
+    padding:0;
+  }
+  body {
+    margin: 0;
+
+  }
+
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .review-form {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .review-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .review-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+  .review-form input,
+  .review-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .review-form textarea {
+    height: 120px;
+  }
+
+  .review-form button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* === FOOTER === */
+  .footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+.footer-container {
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 100px; /* Великий відступ між лого і колонками */
+}
+
+
+.footer-logo {
+  font-family: 'Marmelad', serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  flex-shrink: 0;
+  color: #ccc;
+  margin-right: auto;
+}
+
+
+.footer-columns {
+  display: flex;
+  gap: 40px; /* Менший відступ між колонками */
+  flex: 1;
+  justify-content: flex-end;
+}
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+  }
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .footer-container {
+    width: 100%;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    font-family: 'Marmelad', serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    flex-shrink: 0;
+    color: white;
+  }
+
+  .footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    flex: 1;
+  }
+
+  .footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Зменшений вертикальний відступ між елементами */
+}
+
+.footer-title {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  color: #eee;
+}
+.footer-section a,
+.footer-section div {
+  font-size: 12px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+  
+.footer-section a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+  body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fff;
+    }
+
+    .content {
+      padding: 60px;
+      background-color: #fff;
+    }
+
+    .bottom-nav {
+      background-color: #111; /* чорний фон */
+      color: #fff;
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .bottom-nav .column {
+      flex: 1;
+      text-align: center;
+    }
+
+    .bottom-nav .column p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+@media (max-width: 768px) {
+  /* Хедер */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    font-size: 18px;
+  }
+
+  /* Герой секція */
+  .hero {
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .hero-text {
+    font-size: 48px;
+  }
+
+  .hero-btn {
+    margin-top: 40px;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  /* Контейнер "Про нас" */
+  .container {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+    padding: 0;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .text {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .contacts {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Галереї */
+  .outfit-grid, .outfit-gallery {
+    padding: 20px;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .outfit-item {
+    flex: 1 1 100%;
+  }
+
+  .outfit-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  .outfit-gallery {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .outfit-gallery img {
+    height: auto;
+    width: 100%;
+  }
+
+  /* Форма відгуків */
+  .main-wrapper {
+    padding: 20px;
+  }
+
+  .review-form {
+    width: 100%;
+  }
+
+  /* Футер */
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .footer-logo {
+    font-size: 18px;
+  }
+
+  .footer-section a,
+  .footer-section div {
+    font-size: 14px;
+  }
+
+  .bottom-nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .bottom-nav .column {
+    width: 100%;
+  }
+
+  .bottom-nav .column p {
+    font-size: 14px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">UKRAINIAN TRENDS</div>
+    
+    <nav>
+      <a href="#hero">HOME</a>
+      <a href="#outfits">OUTFITS</a>
+      <a href="#about">ABOUT US</a>
+      <a href="#contact">CONTACT</a>
+      <a href="#reviews">REVIEWS</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <section id="hero" class="hero"></section>
+    <div>
+      <h1 class="hero-text">Стиль & тренди</h1>
+      <a href="#outfits" class="hero-btn">переглянути аутфіти</a>
+    </div>
+  </section>
+
+  <!-- Про нас -->
+  <div class="container">
+    <div id="about" class="container"></div>
+    <div class="contacts" id="contact"></div>
+    <div class="left">
+      <div class="title">Стиль – це більше, ніж мода.</div>
+      <div class="text">
+        <p>У нашому блозі ми розповідаємо про тренди української моди, та стильні рішення для твого гардеробу.</p>
+        <p>Натхнення, поради та актуальні огляди – все в одному місці!</p>
+        <p>Також ми маємо стилістів, з якими ви можете створити свій чудовий гардероб.</p>
+      </div>
+      <div class="contacts">
+        <div class="contact-block">
+          <strong>Ми у соц-мережах:</strong><br>
+          <img src="images/telegram.png" alt="Telegram"> Ukrainian Trends <br>
+          <img src="images/instagram.png" alt="Instagram"> ukr.trends_outfit
+        </div>
+        <div class="contact-block">
+          <strong>Телефонуйте, щоб записатись на консультацію зі стилістом:</strong><br>
+          <img src="images/phone.png" alt="Phone"> +380000000000
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <img src="images/about.jpg" alt="about us">
+    </div>
+  </div>
+
+  <!-- Аутфіти -->
+  <section id="outfits" style="padding: 60px 40px; background: #fff;">
+    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">Аутфіти</h2>
+    <div class="outfit-grid">
+      <div class="outfit-item">
+        <img src="images/casual.jpg" alt="Повсякденний стиль">
+        <a href="#casual" class="style-btn">Повсякденний</a>
+      </div>
+      <div class="outfit-item">
+        <img src="images/dressy.jpg" alt="Повсякденний нарядний">
+        <a href="#smart-casual" class="style-btn">Повсякденний нарядний</a>
+      </div>
+      <div class="outfit-item">
+        <img src="images/business.jpg" alt="Діловий стиль">
+        <a href="#business" class="style-btn">Діловий</a>
+      </div>
+      <div class="outfit-item">
+        <img src="images/cocktail.jpg" alt="Коктейльний стиль">
+        <a href="#cocktail" class="style-btn">Коктейльний</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секції стилів -->
+  <section id="casual" style="padding: 60px 40px;">
+    <h2>Повсякденний стиль</h2>
+    <div class="outfit-gallery">
+      <img src="images/casual1.jpg" alt="Повсякденний 1">
+      <img src="images/casual2.jpg" alt="Повсякденний 2">
+      <img src="images/casual3.jpg" alt="Повсякденний 3">
+    </div>
+  </section>
+
+  <section id="smart-casual" style="padding: 60px 40px;">
+    <h2>Повсякденний нарядний</h2>
+    <div class="outfit-gallery">
+      <img src="images/dressy1.jpg" alt="Нарядний 1">
+      <img src="images/dressy2.jpg" alt="Нарядний 2">
+      <img src="images/dressy3.jpg" alt="Нарядний 3">
+    </div>
+  </section>
+
+  <section id="business" style="padding: 60px 40px;">
+    <h2>Діловий стиль</h2>
+    <div class="outfit-gallery">
+      <img src="images/business1.jpg" alt="Діловий 1">
+      <img src="images/business2.jpg" alt="Діловий 2">
+      <img src="images/business3.jpg" alt="Діловий 3">
+    </div>
+  </section>
+
+  <section id="cocktail" style="padding: 60px 40px;">
+    <h2>Коктейльний стиль</h2>
+    <div class="outfit-gallery">
+      <img src="images/cocktail1.jpg" alt="Коктейльний 1">
+      <img src="images/cocktail2.jpg" alt="Коктейльний 2">
+      <img src="images/cocktail3.jpg" alt="Коктейльний 3">
+    </div>
+  </section>
+
+  <!-- Форма для відгуків -->
+  <div class="main-wrapper">
+    <section class="review-form" id="reviews"></section>
+    <section class="review-form">
+      <h2>Додати відгук:</h2>
+      <label for="name">Ім’я:</label>
+      <input type="text" id="name" name="name">
+      <label for="review">Ваш відгук:</label>
+      <textarea id="review" name="review"></textarea>
+      <button onclick="window.location.href='/'">Надіслати</button>
+    </section>
+  </div>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <span>UKRAINIAN</span><br>
+        <span>TRENDS</span>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-section">
+          <div class="footer-title">INFORMATION</div>
+          <a href="#">Про нас</a>
+          <a href="#">Відгуки</a>
+          <a href="#">Соц-мережі</a>
+        </div>
+        <div class="footer-section">
+          <div class="footer-title">CONTACT</div>
+          <div>ukr.trends_outfit</div>
+          <div>UKRAINIAN TRENDS</div>
+          <div>+380000000000</div>
+        </div>
+        <div class="footer-section">
+          <div class="footer-title">OUTFITS</div>
+          <a href="#">Повсякденний</a>
+          <a href="#">Нарядний повсякденний</a>
+          <a href="#">Діловий</a>
+          <a href="#">Коктейльний</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
